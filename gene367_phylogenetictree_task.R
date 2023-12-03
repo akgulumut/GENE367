@@ -17,7 +17,6 @@ rownames(sequences) <- data$individual_ID
 # Convert the sequences to DNAbin format
 sequences_dnabin <- as.DNAbin(sequences)
 
-
 # Calculate the genetic distances
 distances <- dist.dna(sequences_dnabin, model = "raw")
 
@@ -35,7 +34,6 @@ phylo_tree <- as.phylo(clustering)
 
 # Plot the phylogenetic tree
 
-
 plot(phylo_tree, show.tip.label = TRUE, edge.color = rainbow(length(phylo_tree$edge.length)),
      label.offset = 0.004, 
      bg = "lightblue", tip.color = "black", edge.width = 2, cex = 0.85) 
@@ -43,8 +41,7 @@ title("Phylogenetic tree of the Eurasian Golden Tomby individuals", sub = "Diver
 axisPhylo(side = 1, col = "darkgray", tick = TRUE, cex = 0.8, lwd = 1, las = 2)
 
 
-
-# Example combining different effects
+# Example of plotting as circular but was not used in report so silenced
 #plot(phylo_tree, show.tip.label = TRUE, 
 #     edge.color = rainbow(length(phylo_tree$edge.length)),
 #     label.offset = 0.04, bg = heat.colors(length(phylo_tree$tip.label)),
